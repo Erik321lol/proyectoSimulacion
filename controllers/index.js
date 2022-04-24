@@ -28,6 +28,7 @@ app.use(myconn(mysql, dbOptions, 'single'))
 //rutas
 app.use(require('./rutas/ingredientes'));
 app.use(require('./rutas/productos'))
+app.use(require('./rutas/ingresonegocio'))
 
 
 // Aca comenzamos el sv
