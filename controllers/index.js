@@ -3,6 +3,11 @@ const app = express();
 const morgan = require('morgan');
 const mysql = require('mysql');
 const myconn = require('express-myconnection');
+const cors = require('cors')
+
+
+app.use(cors()) //todo el mundo
+
 const dbOptions = {
     host: 'be8c3nariggcsvjq05zw-mysql.services.clever-cloud.com',
     port: 3306,

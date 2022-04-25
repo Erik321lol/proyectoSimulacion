@@ -1,0 +1,29 @@
+.grid-container {
+    display: grid;
+}
+
+.grid-container {
+    display: inline-grid;
+}
+
+.grid-container {
+    display: grid;
+    gap: 50px 50px;
+    width: 500px;
+    height: 500px;
+    -webkit-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+    box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+}
+
+.fondo {
+    -webkit-box-shadow: 10px 38px 107px 42px rgba(0, 0, 0, 0.28);
+    -moz-box-shadow: 10px 38px 107px 42px rgba(0, 0, 0, 0.28);
+    box-shadow: 10px 38px 107px 42px rgba(0, 0, 0, 0.28);
+}
+
+.col {
+    -webkit-box-shadow: 0px -1px 0px 6px rgba(230, 230, 230, 1);
+    -moz-box-shadow: 0px -1px 0px 6px rgba(230, 230, 230, 1);
+    box-shadow: 0px -1px 0px 6px rgba(230, 230, 230, 1);
+}

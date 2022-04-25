@@ -2,9 +2,9 @@ const { Router } = require('express');
 const router = Router();
 
 router.get('/test2', (req, res) => {
-    res.send('"Titulo": "la pupuseria ingreso negocio"');
-})
-// aca generamos una consulta general con un select y returna un json se consulta http://localhost:3000/ingresonegocio
+        res.send('"Titulo": "la pupuseria ingreso negocio"');
+    })
+    // aca generamos una consulta general con un select y returna un json se consulta http://localhost:3000/ingresonegocio
 
 router.get('/ingresonegocio', (req, res) => { //aca difinimos la ruta en la que vamos a consultar
     req.getConnection((err, conn) => {
@@ -19,10 +19,10 @@ router.get('/ingresonegocio', (req, res) => { //aca difinimos la ruta en la que 
 });
 
 // Este metodo es para poder consultar un dato en especifico la forma para consultarlo es http://localhost:3000/ingresonegocio/cod 
-router.get('/ingresonegocio/:cod', (req, res) => {
+router.get('/ingresonegocio/:dia', (req, res) => {
     req.getConnection((err, conn) => {
         if (err) return res.send(err);
-        conn.query('select * from ingreso_negocio WHERE cod_ingreso_negocio = ? ', [req.params.cod], (err, rows) => { //aca definimos la consutla como tal este caso es un select en especifico
+        conn.query('select * from ingreso_negocio WHERE dia_atendido = ? ', [req.params.dia], (err, rows) => { //aca definimos la consutla como tal este caso es un select en especifico
             if (err) return res.send(); // esto es general para todos 
 
             res.json(rows) // aca estamos obteniendo las rows y las estamos mandando como json a la consulta
@@ -72,4 +72,3 @@ router.put('/ingresonegocio/:cod', (req, res) => {
 })
 
 module.exports = router;
-
