@@ -79,7 +79,7 @@ function graficar(dataDatos, labels) {
     const data = {
         labels: labels,
         datasets: [{
-            label: 'Distribucion binomial',
+            label: 'Personas atendidas',
             backgroundColor: 'rgb(255, 99, 132)',
             borderColor: 'rgb(255, 99, 132)',
             data: dataDatos
@@ -102,7 +102,7 @@ function graficar2(dataDatos, labels) {
     const data = {
         labels: labels,
         datasets: [{
-            label: 'Distribucion binomial',
+            label: 'Personas que llegaron al local',
             backgroundColor: 'rgb(255, 99, 132)',
             borderColor: 'rgb(255, 99, 132)',
             data: dataDatos,
