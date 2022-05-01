@@ -35,7 +35,7 @@ router.get('/ingredientes/:cod', (req, res) => {
 router.get('/ingredientes_producto/:nombre', (req, res) => {
     req.getConnection((err, conn) => {
         if (err) return res.send(err);
-        conn.query('select ingrediente.precio, ingrediente.cantidad from ingrediente ' +
+        conn.query('select ingrediente.precio, ingrediente.cantidad, ingrediente.nombre from ingrediente ' +
             'inner join producto_ingrediente ' +
             'on ingrediente.cod_ingrediente = producto_ingrediente.cod_ingrediente ' +
             'inner join producto ' +
