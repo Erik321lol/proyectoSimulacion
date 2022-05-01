@@ -35,16 +35,16 @@ router.get('/ingredientes/:cod', (req, res) => {
 router.get('/ingredientes_producto/:nombre', (req, res) => {
     req.getConnection((err, conn) => {
         if (err) return res.send(err);
-        conn.query('select ingrediente.precio, ingrediente.cantidad from ingrediente' +
-        'inner join producto_ingrediente' +
-        'on ingrediente.cod_ingrediente = producto_ingrediente.cod_ingrediente' +
-        'inner join producto' +
-        'on producto.cod_producto = producto_ingrediente.cod_producto' +
-        'where producto.nombre = "?" ', [req.params.nombre], (err, rows) => { //aca definimos la consutla como tal este caso es un select en especifico
-            if (err) return res.send(); // esto es general para todos 
+        conn.query('select ingrediente.precio, ingrediente.cantidad from ingrediente ' +
+            'inner join producto_ingrediente ' +
+            'on ingrediente.cod_ingrediente = producto_ingrediente.cod_ingrediente ' +
+            'inner join producto ' +
+            'on producto.cod_producto = producto_ingrediente.cod_producto ' +
+            'where producto.nombre = ? ', [req.params.nombre], (err, rows) => { //aca definimos la consutla como tal este caso es un select en especifico
+                if (err) return res.send(); // esto es general para todos 
 
-            res.json(rows) // aca estamos obteniendo las rows y las estamos mandando como json a la consulta
-        });
+                res.json(rows) // aca estamos obteniendo las rows y las estamos mandando como json a la consulta
+            });
     });
 })
 
