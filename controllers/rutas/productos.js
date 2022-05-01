@@ -16,10 +16,10 @@ router.get('/producto', (req, res) => { //aca difinimos la ruta en la que vamos 
 });
 
 // Este metodo es para poder consultar un dato en especifico la forma para consultarlo es http://localhost:3000/ingredientes/cod 
-router.get('/producto/:cod', (req, res) => {
+router.get('/producto/:nombre', (req, res) => {
     req.getConnection((err, conn) => {
         if (err) return res.send(err);
-        conn.query('select * from producto WHERE cod_producto = ? ', [req.params.cod], (err, rows) => { //aca definimos la consutla como tal este caso es un select en especifico
+        conn.query('select * from producto WHERE nombre = ? ', [req.params.nombre], (err, rows) => { //aca definimos la consutla como tal este caso es un select en especifico
             if (err) return res.send(); // esto es general para todos 
             res.json(rows) // aca estamos obteniendo las rows y las estamos mandando como json a la consulta
         });
