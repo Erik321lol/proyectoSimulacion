@@ -31,6 +31,23 @@ router.get('/ingredientes/:cod', (req, res) => {
     });
 })
 
+// Este metodo es para poder consultar los datos de un producto por nombre en especifico la forma para consultarlo es http://localhost:3000/ingredientes/nombre 
+router.get('/ingredientes_producto/:nombre', (req, res) => {
+    req.getConnection((err, conn) => {
+        if (err) return res.send(err);
+        conn.query('select ingrediente.precio, ingrediente.cantidad from ingrediente' +
+        'inner join producto_ingrediente' +
+        'on ingrediente.cod_ingrediente = producto_ingrediente.cod_ingrediente' +
+        'inner join producto' +
+        'on producto.cod_producto = producto_ingrediente.cod_producto' +
+        'where producto.nombre = "?" ', [req.params.nombre], (err, rows) => { //aca definimos la consutla como tal este caso es un select en especifico
+            if (err) return res.send(); // esto es general para todos 
+
+            res.json(rows) // aca estamos obteniendo las rows y las estamos mandando como json a la consulta
+        });
+    });
+})
+
 //este metodo como tal sirve para poder generar una peticion de tipo post esta funciona para poder ingresar datos se consulta http://localhost:3000/ingredientes
 
 router.post('/ingredientes', (req, res) => { // para este caso es tipo post con esto generamos ingreso de datos

@@ -48,9 +48,9 @@ $(document).ready(function(){
             }
         });  
         document.getElementById("btn_calcular").addEventListener("click", function(){
-            let cantidadProducto = document.getElementById('txt_ingreso_prod').innerHTML;
-            cantidadProducto = $("#txt_ingreso_producto").text();
-            console.log(cantidadProducto);
+            let cantidadProducto = $("#txt_ingreso_prod").val();
+            let productoSeleccionado = $('.prod-selec option:selected').val();
+            
         })
 
         $(".boton_ingresar").click(function() {
