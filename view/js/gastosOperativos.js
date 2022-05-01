@@ -47,9 +47,26 @@ $(document).ready(function(){
 
             }
         });  
+
         document.getElementById("btn_calcular").addEventListener("click", function(){
             let cantidadProducto = $("#txt_ingreso_prod").val();
             let productoSeleccionado = $('.prod-selec option:selected').val();
+            let costoIngrediente = 0;
+            let costoTotal = 0;
+            $.ajax({
+                type: "GET",
+                url: "http://localhost:3000/ingredientes_producto/" + productoSeleccionado,
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function(data){
+                    $('.tablaListaPreparacion').html("");
+                    $.each(data, function(i, item){                      
+                        costoIngrediente = parseInt(item.precio + "", 10) * parseFloat(item.cantidad + "") * cantidadProducto;
+                        costoTotal += costoIngrediente;
+                        $('.tablaListaPreparacion').html($('.tablaListaPreparacion').html() + '<tr><th scope="row">' + cantidadProducto + '</th><td>' + item.nombre + '</td><td>' + item.precio + '</td><td>' + item.cantidad + '</td> <td>' + costoIngrediente + '</td> <td>');
+                    });
+                }
+            })
             
         })
 
