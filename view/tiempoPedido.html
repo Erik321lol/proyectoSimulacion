@@ -14,12 +14,12 @@
 
 <body>
     <center>
-        <h1>SIMULACION TIEMPO DE PEDIDOS</h1>
+        <h1><b>SIMULACION TIEMPO DE PEDIDOS</b></h1>
     </center>
     <div class="container">
         <div class="row mt-5">
             <div class="col">
-                <p>SELECCIONE SUS PRODUCTOS:</p>
+                <p><b>SELECCIONE SUS PRODUCTOS:</b></p>
                 <select name="select" id="Pedidos" class="dropdown Pedidos">
                     <option value="none" selected disabled hidden>Producto</option>
                     <option value="Pupusa simple" class="dropdown-item"> Pupusa simple </option>
@@ -33,18 +33,18 @@
                 <div class="row">
                     <div class="col mt-3">
                         <div style="text-align: center;">
-                            <button id="btn_agregar" type="button" class="btn btn-primary">AGREGAR</button>
+                            <button id="btn_agregar" type="button" class="btn btn-primary mt-3 mb-2">AGREGAR</button>
                         </div>
                     </div>
 
                     <div class="col mt-3">
                         <div style="text-align: center;">
-                            <button id="btn_eliminar" type="button" class="btn btn-danger">ELIMINAR</button>
+                            <button id="btn_eliminar" type="button" class="btn btn-danger mt-3 mb-2">ELIMINAR</button>
                         </div>
                     </div>
                     <div class="row mt-3">
-                        <p>INGRESE LA TASA DE LLEGADA DE CLIENTES (Horas):</p>
-                        <div class="input-group flex-nowrap">
+                        <p><b>INGRESE LA TASA DE LLEGADA DE CLIENTES (Horas):</b></p>
+                        <div class="input-group flex-nowrap mt-3 mb-2">
                             <span class="input-group-text" id="addon-wrapping">λ</span>
                             <input id="input_llegada" type="text" class="form-control" placeholder="Tasa de Llegada"
                                 aria-label="Username" aria-describedby="addon-wrapping">
@@ -56,7 +56,7 @@
 
             </div>
             <div class="col">
-                <p>SELECCIONE LOS SERVIDORES:</p>
+                <p><b>SELECCIONE LOS SERVIDORES:</b></p>
                 <select name="select" class="dropdown Servidores">
                     <option value="none" selected disabled hidden>Servidores</option>
                     <option value="servidor2" class="dropdown-item"> 2 Servidores </option>
@@ -67,17 +67,28 @@
                 <div class="row">
                     <div class="col mt-3">
                         <div style="text-align: center;">
-                            <button id="btn_simular" type="button" class="btn btn-primary">SIMULAR</button>
+                            <button id="btn_simular" type="button" class="btn btn-success mt-3 mb-2"><b>SIMULAR</b></button>
                         </div>
                     </div>
+                    <div class="col mt-3">
+                        <div style="text-align: center;">
+                            <button id="btn_reiniciar" type="button" class="btn btn-warning mt-3 mb-2"><b>REINICIAR</b></button>
+                        </div>
+                    </div>
+
                 </div>
 
             </div>
             <div class="col">
-                <p>PEDIDO:</p>
+                <p><b>PEDIDO:</b></p>
                 <label for="Name">Pedido Seleccionado:</label>
                 <div id="txt_pedido"></div>
                 <div id="txt_servidor"></div>
+            </div>
+            <div class="col col-5">
+                <p><b>RESULTADOS:</b></p>
+                <div id="resultado_pedido"></div>
+                <div id="resultado_formulas"></div>
             </div>
         </div>
         <div class="row pt-4">

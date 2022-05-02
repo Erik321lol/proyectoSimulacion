@@ -2,6 +2,7 @@ console.log("Hola mundo")
 
 let produtosSeleccionados = [];
 
+
 document.getElementById('Pedidos').addEventListener('change', (event) => {
     let pedido = $('.Pedidos option:selected').val();
 });
@@ -14,6 +15,10 @@ document.getElementById('btn_agregar').addEventListener('click', function () {
 document.getElementById('btn_eliminar').addEventListener('click', function () {
     $('#txt_pedido').children().last().remove()
     produtosSeleccionados.splice(produtosSeleccionados.length - 1);
+})
+
+document.getElementById('btn_reiniciar').addEventListener('click', function () {
+    location.reload();
 })
 
 let tiempo_preparacion = 0;
@@ -59,9 +64,9 @@ document.getElementById('btn_simular').addEventListener('click', function () {
                         console.log(tiempo_preparacion);
                         console.log(precio);
                     });
-                    tiempo_prom = tiempo_preparacion / contador;
+                    tiempo_prom = (tiempo_preparacion / contador).toFixed(2);
                     console.log(data);
-                    console.log(tiempo_prom);
+                    document.getElementById('resultado_pedido').innerHTML = '<p id="resultado"> <b>Tiempo promedio: ' + tiempo_prom + ' minutos</b></p>'
                 },
                 failure: function (data) {
                     alert(data.responseText);
@@ -84,7 +89,7 @@ document.getElementById('btn_simular').addEventListener('click', function () {
 
             } else if (servidor == 'servidor3') {
                 tasa_servicio = 45;
-        
+
             } else if (servidor == 'servidor4') {
                 tasa_servicio = 50;
 
@@ -92,12 +97,14 @@ document.getElementById('btn_simular').addEventListener('click', function () {
                 alert('Seleccione los servidores')
             }
 
-            let num_promedio_cola = Math.round(Math.pow(tasa_llegada,2)/((tasa_servicio)*(tasa_servicio-tasa_llegada)))
-            console.log(num_promedio_cola)
-            let tiempo_prom_cola = ((Math.pow(tasa_llegada,2)/((tasa_servicio)*(tasa_servicio-tasa_llegada)))/(tasa_llegada)).toFixed(2)
-            console.log(tiempo_prom_cola)
-            let prob_persona_servicio = (tasa_llegada/tasa_servicio).toFixed(2)
-            console.log(prob_persona_servicio)
+            let num_promedio_cola = Math.round(Math.pow(tasa_llegada, 2) / ((tasa_servicio) * (tasa_servicio - tasa_llegada)))
+            document.getElementById('resultado_formulas').innerHTML += '<p id="resultado"> <b>Numero promedio de clientes en cola: ' + num_promedio_cola + '</b></p>'
+            let tiempo_prom_cola = ((Math.pow(tasa_llegada, 2) / ((tasa_servicio) * (tasa_servicio - tasa_llegada))) / (tasa_llegada)).toFixed(2)
+            let tiempo_prom_hora= (tiempo_prom_cola*60).toFixed(2);
+            document.getElementById('resultado_formulas').innerHTML += '<p id="resultado"> <b>Tiempo promedio que pasa un cliente en cola: ' + tiempo_prom_cola + ' horas</b></p>'
+            document.getElementById('resultado_formulas').innerHTML += '<p id="resultado"> <b>Tiempo promedio que pasa un cliente en cola: ' + tiempo_prom_hora + ' minutos</b></p>'
+            let prob_persona_servicio = ((tasa_llegada / tasa_servicio)*(100)).toFixed(2)
+            document.getElementById('resultado_formulas').innerHTML += '<p id="resultado"> <b>Probabilidad que una persona que llegue tenga que esperar: ' + prob_persona_servicio + ' % </b></p>'
 
         }
 
