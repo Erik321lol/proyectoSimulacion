@@ -1,7 +1,11 @@
 console.log("Hola mundo")
 
 let produtosSeleccionados = [];
-
+let labels = [];
+let dataDatos = [];
+let resulservidor2 = 0
+let resulservidor3 = 0
+let resulservidor4 = 0
 
 document.getElementById('Pedidos').addEventListener('change', (event) => {
     let pedido = $('.Pedidos option:selected').val();
@@ -59,7 +63,9 @@ document.getElementById('btn_simular').addEventListener('click', function () {
                         } else if (servidor == 'none') {
                             alert('Seleccione la cantidad de servidores')
                         }
-
+                        resulservidor2 += parseInt(item.tiempo_preparacion, 10)
+                        resulservidor3 += parseInt(item.tiempo_preparacion, 10) - 2
+                        resulservidor4 += parseInt(item.tiempo_preparacion, 10) - 3 
                         precio = item.precio;
                         console.log(tiempo_preparacion);
                         console.log(precio);
@@ -76,6 +82,17 @@ document.getElementById('btn_simular').addEventListener('click', function () {
                 }
             });
         }
+
+        let r2 = ((resulservidor2 / contador).toFixed(2))
+        let r3 = ((resulservidor3 / contador).toFixed(2))
+        let r4 = ((resulservidor4 / contador).toFixed(2))
+        dataDatos.push(r2)
+        dataDatos.push(r3) 
+        dataDatos.push(r4) 
+        labels.push(2)
+        labels.push(3)
+        labels.push(4)
+        graficar(dataDatos,labels);
 
     } else {
         let tasa_servicio = 0;
@@ -113,3 +130,27 @@ document.getElementById('btn_simular').addEventListener('click', function () {
 
 
 })
+
+function graficar(dataDatos,labels) {
+
+    const data = {
+        labels: labels,
+        datasets: [{
+            label: 'Tiempo promedio Pedidos',
+            backgroundColor: 'rgb(255, 99, 132)',
+            borderColor: 'rgb(255, 99, 132)',
+            data: dataDatos
+        }]
+    };
+
+    const config = {
+        type: 'line',
+        data: data,
+        options: {}
+    };
+
+    const myChart = new Chart(
+        document.getElementById('myChart'),
+        config
+    );
+}
