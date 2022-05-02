@@ -15,80 +15,139 @@
     <title>Gastos Operativos</title>
   </head>
   <body>
-    <div class="ms-4 me-4 mb-4 fondo">
-        <div class="row">
-            <div class="col">
-                <div class=" ms-3 me-3 mb-3">
-                    <table class=" table">
-                        <thead>
-                            <tr>
-                                <th scope="col">No.</th>
-                                <th scope="col">Nombre</th>
-                                <th scope="col">Precio</th>
-                                <th scope="col">Cantidad</th>
-                            </tr>
-                        </thead>
-                        <tbody class="tablaPrecioIngrediente">
-
-                        </tbody>
-                    </table>
-                </div>
-            </div>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container-fluid">
+          <a class="navbar-brand" href="index.html">
+              <img src="/src/img/logo.png" alt="logo" width="125" height="50">
+          </a>
+          <a class="navbar-brand" href="index.html"><b>LA PUPUSERIA</b></a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                  <li class="nav-item">
+                      <a class="nav-link active" aria-current="page" href="index.html"><b>INICIO</b></a>
+                  </li>
+                  <li class="nav-item dropdown">
+                      <a class="nav-link active dropdown-toggle" href="consultarIngreso.html" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                          <b>SIMULACION</b>
+                      </a>
+                      <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                          <li><a class="dropdown-item" href="consultarIngreso.html">DESERCION</a></li>
+                          <li><a class="dropdown-item" href="gastosOperativos.html">GASTOS OPERATIVOS</a></li>
+                          <li><a class="dropdown-item" href="tiempoPedido.html">TIEMPO DE PEDIDOS</a></li>
+                      </ul>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link active" href="#"><b>MÁS</b></a>
+                  </li>
+              </ul>
+          </div>
+      </div>
+  </nav>
+    <div class="ms-4 me-4 mb-4 mt-2 fondo">
+      <div class="p-3 mb-2 bg-secondary text-white"><h1> GASTOS OPERATIVOS </h1></div>
+      <div class="row">
+        <div class="col">
+          <div class="p-3 mb-2 bg-dark text-white" style="text-align: center;"><h5>Tabla de cantidades y precios por ingrediente</h5></div>
+          <div class="ms-3 me-3 mb-3 mt-2">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th scope="col">No.</th>
+                  <th scope="col">Nombre</th>
+                  <th scope="col">Precio</th>
+                  <th scope="col">Cantidad</th>
+                </tr>
+              </thead>
+              <tbody class="tablaPrecioIngrediente"></tbody>
+            </table>
+          </div>
         </div>
+      </div>
 
-        <div class="row">
-            <div class="col">
+      <div class="row">
+        <div class="col">
+          <div class="mt-3 ms-3 me-3 mb-3">
+            <div class="form-floating mt-3 ms-3 me-3 mb-3">
+              <select name="select" class="dropdown prod-selec">
+                <option value="none" selected disabled hidden>
+                  Seleccione un Producto
+                </option>
+                <option value="pupusa simple" class="dropdown-item">
+                  Pupusa Simple
+                </option>
+                <option value="pupusa con embutido" class="dropdown-item">
+                  Pupusa con Embutido
+                </option>
+                <option value="pupusa con carne" class="dropdown-item">
+                  Pupusa con Carne
+                </option>
+                <option value="churrasco" class="dropdown-item">
+                  Churrasco
+                </option>
+                <option value="desayuno" class="dropdown-item">Desayuno</option>
+                <option value="cena" class="dropdown-item">Cena</option>
+              </select>
+            </div>
+            <form>
+              <div class="form-group">
                 <div class="mt-3 ms-3 me-3 mb-3">
-                    <div class="form-floating mt-3 ms-3 me-3 mb-3">
-                        <select name="select" class="dropdown prod-selec">
-                            <option value="none" selected disabled hidden>Seleccione un Producto</option>
-                            <option value="pupusa simple" class="dropdown-item"> Pupusa Simple </option>
-                            <option value="pupusa con embutido" class="dropdown-item"> Pupusa con Embutido </option>
-                            <option value="pupusa con carne" class="dropdown-item"> Pupusa con Carne </option>
-                            <option value="churrasco" class="dropdown-item"> Churrasco </option>
-                            <option value="desayuno" class="dropdown-item"> Desayuno </option>
-                            <option value="cena" class="dropdown-item"> Cena </option>
-                        </select>
-                    </div>
-                    <form>
-                        <div class="form-group" >
-                            <div class="mt-3 ms-3 me-3 mb-3">
-                                <label for="formGroupExampleInput"> Ingrese el número de Produtos que desea simular</label>
-                                <input type="number" class="form-control" style="WIDTH: 200px; HEIGHT: 32px" id="txt_ingreso_prod" placeholder="Ingrese la cantidad">
-                            </div>
-                        </div>
-                    </form>                    
-                    <a class="btn btn-primary boton_ingresar mt-3 ms-3 me-3 mb-3" id="btn_calcular"> Calcular </a>
-                    <a href="./index.html" class="btn btn-primary"> Regresar </a>
-                    <label for="" class="porcentajeAtendido"></label>
-                    <label for="" class="porcentajeNoAtendido"></label>
+                  <label for="formGroupExampleInput">
+                    Ingrese el número de Produtos que desea simular</label
+                  >
+                  <input
+                    type="number"
+                    class="form-control"
+                    style="width: 200px; height: 32px"
+                    id="txt_ingreso_prod"
+                    placeholder="Ingrese la cantidad"
+                  />
                 </div>
-
-            </div>
-            <div class ="row">
-                <div class="col">
-                    <div class=" ms-3 me-3 mb-3">
-                        <table class=" table">
-                            <thead>
-                                <tr>
-                                    <th scope="col">Cantidad Producto</th>
-                                    <th scope="col">Nombre</th>
-                                    <th scope="col">Precio</th>
-                                    <th scope="col">Cantidad para Preparacion</th>
-                                    <th scope="col">Costo total por Ingrediente</th>
-                                </tr>
-                            </thead>
-                            <tbody class="tablaListaPreparacion">
-
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </div>    
+              </div>
+            </form>
+            <a
+              class="btn btn-primary boton_ingresar mt-3 ms-3 me-3 mb-3"
+              id="btn_calcular"
+            >
+              Calcular
+            </a>
+            <a href="./index.html" class="btn btn-primary"> Regresar </a>
+            <label for="" class="porcentajeAtendido"></label>
+            <label for="" class="porcentajeNoAtendido"></label>
+          </div>
         </div>
-
+        <div class="col">
+          <div class="card mt-5" style="width: 18rem; text-align: center; margin: auto;">
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item" id = "resultadoTotal">Coste total  de preparación</li>
+              <li class="list-group-item" id = "precioVenta">Precio de venta </li>
+              <li class="list-group-item" id = "gananciaTotal">A third item</li>
+            </ul>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <div class="ms-3 me-3 mb-3">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col">Cantidad Producto</th>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Precio</th>
+                    <th scope="col">Cantidad para Preparacion</th>
+                    <th scope="col">Costo total por Ingrediente</th>
+                  </tr>
+                </thead>
+                <tbody class="tablaListaPreparacion"></tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-    
+
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
