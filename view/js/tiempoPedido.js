@@ -49,16 +49,19 @@ document.getElementById('btn_simular').addEventListener('click', function() {
                             tiempo_preparacion1 += parseInt(item.tiempo_preparacion, 10);
                             tiempo_preparacion2 += parseInt(item.tiempo_preparacion, 10) - 2
                             tiempo_preparacion3 += parseInt(item.tiempo_preparacion, 10) - 3
+                            tiempo_prom1 = (tiempo_preparacion1 / contador).toFixed(2);
                             document.getElementById('resultado_pedido').innerHTML = '<p id="resultado"> <b>Tiempo promedio: ' + tiempo_prom1 + ' minutos</b></p>'
                         } else if (servidor == 'servidor3') {
                             tiempo_preparacion1 += parseInt(item.tiempo_preparacion, 10);
                             tiempo_preparacion2 += parseInt(item.tiempo_preparacion, 10) - 2
                             tiempo_preparacion3 += parseInt(item.tiempo_preparacion, 10) - 3
+                            tiempo_prom2 = (tiempo_preparacion2 / contador).toFixed(2);
                             document.getElementById('resultado_pedido').innerHTML = '<p id="resultado"> <b>Tiempo promedio: ' + tiempo_prom2 + ' minutos</b></p>'
                         } else if (servidor == 'servidor4') {
                             tiempo_preparacion1 += parseInt(item.tiempo_preparacion, 10);
                             tiempo_preparacion2 += parseInt(item.tiempo_preparacion, 10) - 2
                             tiempo_preparacion3 += parseInt(item.tiempo_preparacion, 10) - 3
+                            tiempo_prom3 = (tiempo_preparacion3 / contador).toFixed(2);
                             document.getElementById('resultado_pedido').innerHTML = '<p id="resultado"> <b>Tiempo promedio: ' + tiempo_prom3 + ' minutos</b></p>'
                         } else if (servidor == 'none') {
                             alert('Seleccione la cantidad de servidores')
