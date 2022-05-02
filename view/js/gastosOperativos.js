@@ -48,6 +48,26 @@ $(document).ready(function(){
         });  
 
         document.getElementById("btn_calcular").addEventListener("click", function(){
+            document.getElementById("ocultarTabla").innerHTML= '<div class="col">'+
+            '<div class="p-3 mb-3 mt-3 ms-3 me-2 bg-dark text-white"'+
+            'style="text-align: center">'+
+            '<h8>Tabla de cálculo de simulación del producto seleccionado</h8>'+
+            ' </div>'+
+            ' <div class="ms-3 me-3 mb-3">'+
+            '  <table class="table">'+
+            '    <thead>'+
+            '     <tr>'+
+            '      <th scope="col">Cantidad Producto</th>'+
+            '       <th scope="col">Nombre</th>'+
+            '       <th scope="col">Precio</th>'+
+            '      <th scope="col">Cantidad para Preparacion</th>'+
+            '      <th scope="col">Costo total por Ingrediente</th>'+
+            '     </tr>'+
+            '   </thead>'+
+            '    <tbody class="tablaListaPreparacion"></tbody>'+
+            ' </table>'+
+            ' </div>'+
+            ' </div>';
             let cantidadProducto = $("#txt_ingreso_prod").val();
             let productoSeleccionado = $('.prod-selec option:selected').val();
             let costoIngrediente = 0;
