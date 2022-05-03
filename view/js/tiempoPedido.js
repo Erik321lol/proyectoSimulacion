@@ -140,8 +140,8 @@ function graficar(dataDato, label) {
         labels: label,
         datasets: [{
             label: 'Tiempo promedio Pedidos',
-            backgroundColor: 'rgb(255, 99, 132)',
-            borderColor: 'rgb(255, 99, 132)',
+            backgroundColor: 'rgb(0, 0, 0)',
+            borderColor: 'rgb(0, 0, 0)',
             data: dataDato
         }]
     };
