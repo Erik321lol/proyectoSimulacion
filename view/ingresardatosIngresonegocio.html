@@ -11,27 +11,69 @@
 </head>
 
 <body>
-    <div class="form-floating mb-3">
-        <input type="txt" class="form-control atendidos" id="floatingInput atendidos">
-        <label for="floatingInput">numero de clientes atendidos</label>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.html">
+                <img src="/src/img/logo.png" alt="logo" width="125" height="50">
+            </a>
+            <a class="navbar-brand" href="index.html"><b>La pupuseria</b></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="index.html"><b>INICIO</b></a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link active dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <b>SIMULACION</b>
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="#">DESERCION</a></li>
+                            <li><a class="dropdown-item" href="#">SIMULACION 2</a></li>
+                            <li><a class="dropdown-item" href="#">SIMULACION 3</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#"><b>MAS</b></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="">
+        <center>
+            <div class="card" style="width: 600px; height: 600; right: auto; top: 100px; border-style:solid ">
+                <div class="p-3 mb-2 bg-secondary text-white">
+                    <h1>ATENCION AL CLIENTE Y PORCENTAJE DE DESERCION</h1>
+                </div>
+                <div class="form-floating mt-3 mb-3 p-3">
+                    <p>numero de clientes atendidos</p>
+                    <input type="txt" class="form-control atendidos" id="floatingInput atendidos">
+
+                </div>
+                <div class="form-floating mb-3 p-3">
+                    <p>numero de cliente que ingreso</p>
+                    <input type="txt" class="form-control ingreso " id="floatingInput ingreso">
+                </div>
+                <div class="form-floating mb-3">
+                    <select name="select" class="dropdown mb-3 dia">
+                        <option value="lunes" class="dropdown-item" selected> Lunes </option>
+                        <option value="martes" class="dropdown-item">Martes</option>
+                        <option value="miercoles" class="dropdown-item">Miercoles</option>
+                        <option value="jueves" class="dropdown-item">Jueves</option>
+                        <option value="viernes" class="dropdown-item">Viernes</option>
+                        <option value="sabado" class="dropdown-item">Sabado</option>
+                        <option value="domingo" class="dropdown-item">Domingo</option>
+                    </select>
+                </div>
+                <a class="btn btn-success boton_ingresar m-3">Ingresar datos</a>
+                <a href="./ingresonegocio.html" class="btn btn-warning m-3">Regresar</a>
+            </div>
+        </center>
     </div>
-    <div class="form-floating mb-3">
-        <input type="txt" class="form-control ingreso" id="floatingInput ingreso">
-        <label for="floatingInput">numero de cliente que ingreso</label>
-    </div>
-    <div class="form-floating mb-3">
-        <select name="select" class="dropdown mb-3 dia">
-            <option value="lunes" class="dropdown-item" selected> Lunes </option>
-            <option value="martes" class="dropdown-item">Martes</option>
-            <option value="miercoles" class="dropdown-item">Miercoles</option>
-            <option value="jueves" class="dropdown-item">Jueves</option>
-            <option value="viernes" class="dropdown-item">Viernes</option>
-            <option value="sabado" class="dropdown-item">Sabado</option>
-            <option value="domingo" class="dropdown-item">Domingo</option>
-        </select>
-    </div>
-    <a href="./ingresonegocio.html" class="btn btn-primary">Regresar</a>
-    <a class="btn btn-primary boton_ingresar">Ingresar datos</a>
+
 
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>

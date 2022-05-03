@@ -45,14 +45,14 @@
     </nav>
     <div class="ms-4 me-4 mb-4 mt-2">
         <div class="p-3 mb-2 bg-secondary text-white">
-            <h1>GASTOS OPERATIVOS</h1>
+            <h1>ATENCION AL CLIENTE Y PORCENTAJE DE DESERCION</h1>
         </div>
         <div class="row">
             <div class="col">
                 <div class="p-3 mb-2 bg-dark text-white" style="text-align: center">
                     <h5>TABLA DE INGRESO Y DESERCION DE CLIENTES</h5>
                 </div>
-                <div class=" ms-3 me-3 mb-3">
+                <div class=" ms-3 me-3 mb-3 mt-3">
                     <table class=" table">
                         <thead>
                             <tr>
@@ -72,22 +72,34 @@
                 <div class="p-3 mb-2 bg-dark text-white" style="text-align: center">
                     <h5>SELECCION DE INGRESO DE CLIENTES POR DIA</h5>
                 </div>
-                <div class="mt-3 ms-3 me-3 mb-3">
-                    <div class="form-floating">
-                        <select name="select" class="dropdown dia">
-                            <option value="lunes" class="dropdown-item" selected> Lunes </option>
-                            <option value="martes" class="dropdown-item">Martes</option>
-                            <option value="miercoles" class="dropdown-item">Miercoles</option>
-                            <option value="jueves" class="dropdown-item">Jueves</option>
-                            <option value="viernes" class="dropdown-item">Viernes</option>
-                            <option value="sabado" class="dropdown-item">Sabado</option>
-                            <option value="domingo" class="dropdown-item">Domingo</option>
-                        </select>
-                    </div>
-                    <a class="btn btn-primary boton_ingresar">Consultar</a>
-                    <a href="./ingresonegocio.html" class="btn btn-primary">Regresar</a>
-                    <label for="" class="porcentajeAtendido"></label>
-                    <label for="" class="porcentajeNoAtendido"></label>
+                <div class="col">
+                    <center>
+                        <div class="mt-3 ms-3 me-3 mb-3">
+                            <div class="form-floating">
+                                <select name="select" class="dropdown dia mt-3">
+                                    <option value="lunes" class="dropdown-item" selected> Lunes </option>
+                                    <option value="martes" class="dropdown-item">Martes</option>
+                                    <option value="miercoles" class="dropdown-item">Miercoles</option>
+                                    <option value="jueves" class="dropdown-item">Jueves</option>
+                                    <option value="viernes" class="dropdown-item">Viernes</option>
+                                    <option value="sabado" class="dropdown-item">Sabado</option>
+                                    <option value="domingo" class="dropdown-item">Domingo</option>
+                                </select>
+                            </div>
+                        </div>
+                        <a class="btn btn-success boton_ingresar">Simular</a>
+                        <a href="./ingresonegocio.html" class="btn btn-warning">Regresar</a>
+                    </center>
+                    <center>
+                        <div class="col">
+                            <div class="m-3 p-3">
+                                <b> <label for="" class="porcentajeAtendido"></label></b>
+                            </div>
+                            <div class="m-3 p-3">
+                                <b> <label for="" class="porcentajeNoAtendido"></label></b>
+                            </div>
+                        </div>
+                    </center>
                 </div>
             </div>
 

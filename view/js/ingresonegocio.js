@@ -61,8 +61,8 @@ $(document).ready(function() {
                 clienteLlegadaAcumuladop = clienteLlegadaAcumulado / contador;
                 atencionClientes = (Math.round10((clienteAtendidoAcumuladop / clienteLlegadaAcumuladop), -2)) * 100;
                 atencionNoClientes = (100 - atencionClientes);
-                $('.porcentajeAtendido').text(atencionClientes + "");
-                $('.porcentajeNoAtendido').text(atencionNoClientes + "");
+                $('.porcentajeAtendido').text("Numero promedio de clientes que fueron atendidos: " + atencionClientes);
+                $('.porcentajeNoAtendido').text("Numero promedio de clientes que no fueron atendidos: " + atencionNoClientes);
 
             },
             failure: function(data) {
@@ -80,8 +80,8 @@ function graficar(dataDatos, labels) {
         labels: labels,
         datasets: [{
             label: 'Personas atendidas',
-            backgroundColor: 'rgb(255, 99, 132)',
-            borderColor: 'rgb(255, 99, 132)',
+            backgroundColor: 'rgb(0, 0, 0)',
+            borderColor: 'rgb(0, 0, 0)',
             data: dataDatos
         }]
     };
@@ -103,8 +103,8 @@ function graficar2(dataDatos, labels) {
         labels: labels,
         datasets: [{
             label: 'Personas que llegaron al local',
-            backgroundColor: 'rgb(255, 99, 132)',
-            borderColor: 'rgb(255, 99, 132)',
+            backgroundColor: 'rgb(0,0,0)',
+            borderColor: 'rgb(0, 0, 0)',
             data: dataDatos,
         }]
     };
