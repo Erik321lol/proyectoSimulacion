@@ -4,7 +4,8 @@
     "description": "",
     "main": "index.js",
     "scripts": {
-        "dev": "nodemon controllers/index.js"
+        "dev": "nodemon controllers/index.js",
+        "start": "node controllers/index.js"
     },
     "repository": {
         "type": "git",

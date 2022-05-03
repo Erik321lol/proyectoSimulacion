@@ -12,9 +12,46 @@
 </head>
 
 <body>
-    <div class="ms-4 me-4 mb-4 mt-4">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.html">
+                <img src="/src/img/logo.png" alt="logo" width="125" height="50">
+            </a>
+            <a class="navbar-brand" href="index.html"><b>La pupuseria</b></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="index.html"><b>INICIO</b></a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link active dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <b>SIMULACION</b>
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="#">DESERCION</a></li>
+                            <li><a class="dropdown-item" href="#">SIMULACION 2</a></li>
+                            <li><a class="dropdown-item" href="#">SIMULACION 3</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#"><b>MAS</b></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="ms-4 me-4 mb-4 mt-2">
+        <div class="p-3 mb-2 bg-secondary text-white">
+            <h1>GASTOS OPERATIVOS</h1>
+        </div>
         <div class="row">
             <div class="col">
+                <div class="p-3 mb-2 bg-dark text-white" style="text-align: center">
+                    <h5>TABLA DE INGRESO Y DESERCION DE CLIENTES</h5>
+                </div>
                 <div class=" ms-3 me-3 mb-3">
                     <table class=" table">
                         <thead>
@@ -32,6 +69,9 @@
                 </div>
             </div>
             <div class="col">
+                <div class="p-3 mb-2 bg-dark text-white" style="text-align: center">
+                    <h5>SELECCION DE INGRESO DE CLIENTES POR DIA</h5>
+                </div>
                 <div class="mt-3 ms-3 me-3 mb-3">
                     <div class="form-floating">
                         <select name="select" class="dropdown dia">
@@ -53,8 +93,10 @@
 
         </div>
         <div class="row">
-
             <div class="col">
+                <div class="p-3 mb-2 bg-dark text-white" style="text-align: center">
+                    <h5>GRAFICA DE PERSONAS ATENDIDAS</h5>
+                </div>
                 <div class=" ms-3 me-3 mb-3">
                     <div class="grafica">
                         <canvas id="myChart"></canvas>
@@ -62,6 +104,9 @@
                 </div>
             </div>
             <div class="col">
+                <div class="p-3 mb-2 bg-dark text-white" style="text-align: center">
+                    <h5>GRAFICA DE PERSONAS QUE LLEGARON LLEGARON</h5>
+                </div>
                 <div class="mt-3 ms-3 me-3 mb-3">
                     <div class="grafica2">
                         <canvas id="myChart2"></canvas>
