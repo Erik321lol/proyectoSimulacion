@@ -121,7 +121,7 @@ document.getElementById('btn_simular').addEventListener('click', function() {
             document.getElementById('resultado_formulas').innerHTML += '<p id="resultado"> <b>Tiempo promedio que pasa un cliente en cola: ' + tiempo_prom_cola + ' horas</b></p>'
             document.getElementById('resultado_formulas').innerHTML += '<p id="resultado"> <b>Tiempo promedio que pasa un cliente en cola: ' + tiempo_prom_hora + ' minutos</b></p>'
             let prob_persona_servicio = ((tasa_llegada / tasa_servicio) * (100)).toFixed(2)
-            document.getElementById('resultado_formulas').innerHTML += '<p id="resultado"> <b>Probabilidad que una persona que llegue tenga que esperar: ' + prob_persona_servicio + ' % </b></p>'
+            document.getElementById('resultado_formulas').innerHTML += '<p id="resultado"> <b>Probabilidad que una persona que llegue tenga que esperar: ' + prob_persona_servicio + '% </b></p>'
 
         }
 
