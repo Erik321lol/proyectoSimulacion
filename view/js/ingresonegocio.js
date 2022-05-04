@@ -61,8 +61,8 @@ $(document).ready(function() {
                 clienteLlegadaAcumuladop = clienteLlegadaAcumulado / contador;
                 atencionClientes = (Math.round10((clienteAtendidoAcumuladop / clienteLlegadaAcumuladop), -2)) * 100;
                 atencionNoClientes = (100 - atencionClientes);
-                $('.porcentajeAtendido').text("Numero promedio de clientes que fueron atendidos: " + atencionClientes);
-                $('.porcentajeNoAtendido').text("Numero promedio de clientes que no fueron atendidos: " + atencionNoClientes);
+                $('.porcentajeAtendido').text("Porcentaje de clientes que fueron atendidos:  " + atencionClientes + '%');
+                $('.porcentajeNoAtendido').text("Porcentaje de clientes que no fueron atendidos:   "  + atencionNoClientes+ '%');
 
             },
             failure: function(data) {
